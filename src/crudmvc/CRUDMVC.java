@@ -1,13 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package crudmvc;
+
+import Controlador.CtrProducto;
+import Modelo.ConsultasProducto;
+import Modelo.Producto;
+import Vista.frmProducto;
 
 /**
  *
- * @author conve
+ * @author Ivan Jaramillo
  */
 public class CRUDMVC {
 
@@ -15,7 +16,14 @@ public class CRUDMVC {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Producto prod = new Producto();
+        ConsultasProducto consultas = new ConsultasProducto();
+        frmProducto frm = new frmProducto();
+        
+        CtrProducto ctrl = new CtrProducto(prod, consultas, frm);
+        
+        ctrl.iniciar();
+        frm.setVisible(true);
     }
     
 }
